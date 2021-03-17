@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Home extends StatelessWidget {
+  final String formattedDate =
+      DateFormat('kk:mm:ss \n EEE d MMM').format(DateTime.now());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +15,7 @@ class Home extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             UserAccountsDrawerHeader(
-              accountName: Text('¡Bueno días!'),
+              accountName: Text('$formattedDate'),
               accountEmail: Text('Fecha: yyyy-MM-dd'),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Colors.blue,
